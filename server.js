@@ -2,15 +2,15 @@ const express = require("express");
 const https = require("http");  // returned to http in prod
 const { Server } = require("socket.io");
 const path = require("path");
-const fs = require("fs");
+// const fs = require("fs");
 
 const app = express();
 
 // for mkcert
-const sslOptions = {
-  key: fs.readFileSync("localhost+1-key.pem"),
-  cert: fs.readFileSync("localhost+1.pem"),
-};
+// const sslOptions = {
+//   key: fs.readFileSync("localhost+1-key.pem"),
+//   cert: fs.readFileSync("localhost+1.pem"),
+// };
 
 const server = https.createServer(/*sslOptions, */app);
 const io = new Server(server);
